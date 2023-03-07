@@ -55,6 +55,10 @@
   text-decoration: none;
 }
 
+.header__navbar-icon-link:nth-child(2) {
+  margin-left: 3px;
+}
+
 .header__navbar-item,
 .header__navbar-item-link,
 .header__navbar-icon-link {
@@ -88,7 +92,7 @@
 }
 
 .header__navbar-user-name {
-  margin-left: 8px;
+  margin-left: 4px;
   font-size: 1.4rem;
   font-weight: 400;
 }
@@ -128,6 +132,10 @@
 .header__navbar-user-item a:last-child {
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
+}
+
+.header__navbar-user-item--separate {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* dấu nhọn */
@@ -219,13 +227,15 @@
   top: 118%;
   right: 0;
   width: 404px;
-  border: 1px solid #d3d3d3;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: var(--white-color);
   cursor: default;
-  transform-origin: calc(100% - 20px) top;
+  transform-origin: calc(100% - 32px) top;
   animation: headerNotiGrowth ease-in 0.25s;
   will-change: opacity, transform;
   display: none;
+  z-index: 1;
 }
 
 .header__notify::after {
@@ -244,8 +254,8 @@
   border-width: 18px 24px;
   border-color: transparent transparent var(--white-color) transparent;
   position: absolute;
-  right: -2px;
-  top: -30px;
+  right: 6px;
+  top: -29px;
 }
 
 .header__navbar-item--notify:hover .header__notify {
@@ -517,6 +527,11 @@
   fill: var(--white-color);
 }
 
+.header__logo-link {
+  text-decoration: none;
+  color: transparent;
+}
+
 .header__search {
   height: 40px;
   flex: 1;
@@ -590,7 +605,7 @@
 .header__search-option {
   position: absolute;
   right: 0;
-  top: 150%;
+  top: calc(100% + 4px);
   /* margin-top: 10px; */
   list-style: none;
   width: 130px;
