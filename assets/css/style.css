@@ -967,3 +967,261 @@
 }
 
 /* Home sort + filter */
+
+.home-filter {
+  display: flex;
+  align-items: center;
+  padding: 22px 12px;
+  border-radius: 2px;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.home-filter__label {
+  font-size: 1.4rem;
+  color: #555;
+  margin-right: 16px;
+}
+
+.home-filter__btn {
+  min-width: 90px;
+  margin-right: 12px;
+}
+
+.home-filter__page {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.home-filter__page-num {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-right: 22px;
+}
+
+.home-filter__page-current {
+  color: var(--primary-color);
+}
+
+.home-filter__page-control {
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  width: 72px;
+  height: 36px;
+}
+
+.home-filter__page-btn {
+  flex: 1;
+  display: flex;
+  background-color: var(--white-color);
+  text-decoration: none;
+}
+
+.home-filter__page-icon {
+  margin: auto;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.home-filter__page-btn:first-child {
+  border-right: 1px solid #eee;
+}
+
+.home-filter__page-btn--disable {
+  background-color: #f9f9f9;
+  cursor: default;
+}
+
+.home-filter__page-btn--disable .home-filter__page-icon {
+  color: #ccc;
+}
+
+/* Product Item */
+.home-product {
+}
+
+.home-product-item {
+  position: relative;
+  margin-top: 10px;
+  background-color: var(--white-color);
+}
+
+.home-product-item__img {
+  /* chiều ngang của thẻ chứa nó (khi set ảnh bằng cách background image) */
+  padding-top: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.home-product-item__name {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 1.8rem;
+  margin: 10px 10px 6px;
+
+  /* Cách 1 : thu gọn text lại và xuất hiện dấu ... */
+  height: 3.6rem;
+  overflow: hidden;
+  display: block;
+  /* nếu trình duyệt nào ko dùng đc webkit box thì sẽ display block */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+
+  /* Cách 2: thu gọn text lại và xuất hiện dấu ... (nhưng chỉ áp dụng được với text có 1 dòng */
+  /* text-overflow: ellipsis;
+  white-space: nowrap; */
+}
+
+.home-product-item__price {
+  display: flex;
+  /* Lấy line ở dưới làm chuẩn để canh thẳng hàng */
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.home-product-item__price-old {
+  margin-left: 10px;
+  font-size: 1.4rem;
+  color: #666;
+  text-decoration: line-through;
+}
+
+.home-product-item__price-current {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-left: 10px;
+}
+
+.home-product-item__action {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 10px 0;
+}
+
+.home-product-item__like {
+  font-size: 1.3rem;
+}
+
+.home-product-item__like--liked {
+}
+
+.home-product-item__dislike-icon {
+}
+
+i.home-product-item__liked-icon {
+  color: #f63d30;
+  display: none;
+}
+
+.home-product-item__like--liked .home-product-item__liked-icon {
+  display: inline-block;
+}
+
+.home-product-item__like--liked .home-product-item__dislike-icon {
+  display: none;
+}
+
+.home-product-item__rating {
+  font-size: 0.8rem;
+  color: #d5d5d5;
+  margin-left: auto;
+}
+
+.home-product-item__star--gold {
+  color: var(--star-gold-color);
+}
+
+.home-product-item__sold {
+  font-size: 1.2rem;
+  margin-left: 6px;
+  color: var(--text-color);
+}
+
+.home-product-item__origin {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 10px 0;
+  color: #595959;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.home-product-item__favourite {
+  position: absolute;
+  top: 10px;
+  left: -4px;
+  color: var(--primary-color);
+  /* currentColor là 1 keyword của css, sẽ lấy theo màu của khối hiện tại */
+  background-color: currentColor;
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.6rem;
+  padding-right: 4px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.home-product-item__favourite span {
+  color: var(--white-color);
+}
+
+.home-product-item__favourite i {
+  color: var(--white-color);
+  font-size: 0.9rem;
+  margin: 0 2px 0 5px;
+}
+
+.home-product-item__favourite:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2.9px;
+  border-top: 3px solid currentColor;
+  border-left: 3px solid transparent;
+  filter: brightness(60%);
+}
+
+.home-product-item__sale-off {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40px;
+  height: 36px;
+  background-color: rgba(255, 216, 64, 0.9);
+  text-align: center;
+}
+
+.home-product-item__sale-off-percent {
+  color: #ee4d2d;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  position: relative;
+  top: 2px;
+}
+
+.home-product-item__sale-off-label {
+  font-weight: 600;
+  color: var(--white-color);
+  font-size: 1.3rem;
+  line-height: 1.3rem;
+  position: relative;
+  top: 2px;
+}
+
+.home-product-item__sale-off::before {
+  content: "";
+  /* dùng border tạo shape 2 dấu nhọn dưới tag discount  */
+  position: absolute;
+  /* top: 40px; */
+  left: 0;
+  bottom: -4px;
+  border-width: 0 20px 5px;
+  border-style: solid;
+  border-color: transparent rgba(255, 216, 64, 0.9) transparent
+    rgba(255, 216, 64, 0.9);
+}
