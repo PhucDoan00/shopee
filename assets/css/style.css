@@ -1273,3 +1273,8 @@ i.home-product-item__liked-icon {
   border-color: transparent rgba(255, 216, 64, 0.9) transparent
     rgba(255, 216, 64, 0.9);
 }
+
+/* Pagination */
+.home-product__pagination {
+  margin: 48px 0 32px 0;
+}
